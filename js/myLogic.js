@@ -43,7 +43,7 @@ $(function(){
 
       this.OnDragStart = function(event) {
         var touches = event.originalEvent.touches || [event.originalEvent];
-        for(var t=0; t<touches.length; t++) {
+	for(var t=0; t<touches.length; t++) {
           var el = touches[t].target.parentNode;
 		  
 		  if(el.className.search('polaroid') > -1){
@@ -52,7 +52,7 @@ $(function(){
 		  }
 			el.style.zIndex = zIndexBackup + 1;
 			zIndexBackup = zIndexBackup +1;
-			
+				
           if(el && el == this.target) {
 			$(el).children().toggleClass('upSky');
             this.lastDrag = {
@@ -73,6 +73,11 @@ $(function(){
 
 		if(el.className.search('polaroid') > -1){
 				 el = touches[t].target.parentNode.parentNode;
+				var images=["red","blue","green","orange","purple","black"];
+				var num = Math.floor((Math.random()*images.length)+1);
+				var img = images[num];
+				document.getElementById("bg").style.backgroundImage="url('')";
+				document.getElementById("bg").style.backgroundColor=img; 
 		  }
 		  
           if(el && el == this.target) {

@@ -408,7 +408,7 @@ function Hammer(element, options, undefined)
             // compare the kind of gesture by time
             var now = new Date().getTime();
             var touch_time = now - _touch_start_time;
-
+	  
             // dont fire when hold is fired
             if(options.hold && !(options.hold && options.hold_timeout > touch_time)) {
                 return;
